@@ -9,7 +9,7 @@ Run:
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock:rw docker-clean-up
 ```
-## Kubernetes Cron Job:
+## Kubernetes DaemonSet:
 
 ```
 kubectl apply -f - << EOF
