@@ -20,8 +20,8 @@ docker images -a
 
 # Volumes
 echo "Volumes before:"
-docker images -a
+docker volume ls
 echo "Removing dangling volumes"
 docker volume rm $(docker volume ls -f dangling=true -q)
 echo "Volumes after:"
-docker images -a
+docker volume ls
