@@ -7,7 +7,10 @@ docker build -t docker-clean-up .
 ```
 Run:
 ```
-docker run -v /var/run/docker.sock:/var/run/docker.sock:rw docker-clean-up
+docker run \
+-v /var/run/docker.sock:/var/run/docker.sock:rw \
+-e CRONTAB="0 2 * * 0" \
+docker-clean-up
 ```
 ## Kubernetes DaemonSet:
 
@@ -40,5 +43,3 @@ spec:
               name: docker-socket
 EOF
 ```
-Adjust schedule to your preference.
-In this config it runs every Sunday at 2 am.
